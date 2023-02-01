@@ -10,18 +10,18 @@
 
 
     <form>
-    <div class="row justify-content-between ">
-      <div class="col-3">
-           <label for="Numero"><b>Inserte un número:</b></label>
-        <div class="input-group mb-3 ">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Número:</span>
+        <div class="row justify-content-between ">
+            <div class="col-3">
+                <label for="Numero"><b>Inserte un número:</b></label>
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Número:</span>
+                    </div>
+                    <input type="text" class="form-control " id="Numero" @bind-value="Value">
+                </div>
+                <button class="btn btn-primary mb-3" type ="button" @onclick="GenerarTabla"><img src="https://cdn-icons-png.flaticon.com/512/7048/7048341.png" style="height:22px"></button>
             </div>
-            <input type="text" class="form-control " id="Numero" @bind-value="Value">
         </div>
-        <button class="btn btn-primary mb-3" type ="button" @onclick="GenerarTabla"><img src="https://cdn-icons-png.flaticon.com/512/7048/7048341.png" style="height:22px"></button>
-      </div>
-     </div>
     </form>
 
 
