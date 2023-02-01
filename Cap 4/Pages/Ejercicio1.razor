@@ -1,0 +1,84 @@
+@page "/Ejercicio1"
+
+<PageTitle>Tabla de n (1-10)</PageTitle>
+
+
+
+<body>
+
+
+
+
+    <form>
+    <div class="row justify-content-between ">
+      <div class="col-3">
+           <label for="Numero"><b>Inserte un número:</b></label>
+        <div class="input-group mb-3 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Número:</span>
+            </div>
+            <input type="text" class="form-control " id="Numero" @bind-value="Value">
+        </div>
+        <button class="btn btn-primary mb-3" type ="button" @onclick="GenerarTabla"><img src="https://cdn-icons-png.flaticon.com/512/7048/7048341.png" style="height:22px"></button>
+      </div>
+     </div>
+    </form>
+
+
+    <div>
+        
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>Operacion</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Valores){
+
+                    int i = Valores.IndexOf(item)+1;
+
+                    <tr>
+                        <td>@Value * @i</td>
+                        <td>@item</td>
+                    </tr>
+
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+
+</body>
+
+
+
+
+
+@code
+{
+    int? Value;
+    List<int?>Valores = new();
+
+
+
+    public void GenerarTabla(){
+
+        Valores.Clear();
+        for(int i = 0; i < 10; i++){
+
+            Valores.Add(Value*(i+1));
+
+        }
+    }
+    
+
+
+}
+
+
+    
+
